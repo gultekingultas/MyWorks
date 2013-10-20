@@ -1,0 +1,123 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+ 	int hesap_numarasi, sifre=12345 ; /* kullanıcının daha onceden belirlenmiş sifresini belittik*/
+    printf("hesap numarasi giriniz:"); /*atmlerde kart kullanıldıgı için burada onun yerine hesap numarası kullandık*/
+	scanf("%d",&hesap_numarasi) ; 
+	
+	do /*belirtilen sifrenin yanlıs girilmesi durumu için do-while döngüsü kullandık*/
+	{
+		printf("sifrenizi giriniz:"); 
+		scanf("%d",&sifre);
+	}
+    while(sifre!=12345);
+	int i=0,x;
+      int yenideger,a,para1=5000,para2=10000,b; /*daha önceden hesapta para degeri tanımladık, iki ayrı hesap seklinde yaptık*/
+    do{ /*islem menusu için do-while döngüsü kullandık*/
+    printf("Yapmak istedginiz islemi seciniz.\n Para yatirma: 1\n Para gonderme: 2\n Bakiye: 3 \n Para cekme: 4\n");
+    scanf("%d",&a);
+    switch(a)
+    {
+    case 1:
+        printf("Yatirilacak miktari girin: "); /*hesaba para yatırılırken girilecek tutar ve yatırıldıktan sonraki miktarı belittik*/
+        scanf("%d",&yenideger);
+        para1+=yenideger;
+        printf("SOn miktar=> %d \n",para1);
+               printf("Baska islem yapmak icin 1\n Cikmak icin 2\n"); /*kullanıcının işi bitmemişse takrar calıştırmasına gerek kalmadan devam etmesini sagladık*/
+               
+        scanf("%d",&x);
+        if(x==1)
+          printf("Devam: \n");
+        else
+             i++;
+        break;
+    case 2:
+    	printf("gonderilecek hesap numarasini giriniz:\n"); /*kullanıcını gönderecegi kişinin hesap numarasını yazmasını istedik*/
+    	 scanf("%d",&x);
+    	 
+		 
+		 printf("Gonderilecek miktari girin: ");
+         scanf("%d",&yenideger);
+         if(yenideger<=para1) /*hesaptaki miktarın yeterli olup olmadıgını kontrol etmek için if else yapısını kullandık*/
+		 { 
+         para1-=yenideger; /*kullanıcı hesaptan para gönderdikten sonra hesabında ne kadar para kaldıgını ekrana yazdırdık*/
+         printf("Son miktar=> %d\n",para1);
+         }
+         else/*hesaptaki miktarın yeterli olmadıgı durumda bunu belirtip ne kadar gönderebilicegini yazdırdık*/
+            printf("Bakiye yetersiz: Mevcut miktar %d\n",para1);
+        printf("Baska islem yapmak icin 1\n Cikmak icin 2\n");
+        scanf("%d",&x);
+        if(x==1)
+          printf("Devam: \n");
+        else
+           i++;
+         break;
+    default:
+        printf("Gecersiz deger!");
+    
+    case 3:
+        printf("Mevcut miktar=> %d\n",para1); /*kullanıcının hesabında ne kadar para bulundugunu görebilmesini sagladık*/
+        printf("Baska islem yapmak icin 1\n Cikmak icin 2\n");
+        scanf("%d",&x);
+        if(x==1)
+          printf("Devam: \n");
+        else
+            i++;
+        break;
+    case 4:
+    	
+    	{
+    	
+    	printf("Lutfen bir hesap seciniz: \n hesap 1 \n hesap 2\n"); /*kullanıcıya ait iki hesap olması durumunda hangi hesaptan para cekilecegini bir menü olusturarak sorduk*/
+    	scanf("%d",&b);
+    }
+    	switch(b)/*menüde 5000 tl lik ve 10000 tl lik hesapları gösterdik */
+    	{
+    	case 1:
+    	 printf("Hesaptaki miktar=> %d\n",para1);
+    	 printf("Cekilecek miktari girin: ");
+         scanf("%d",&yenideger);
+         if(yenideger<=para1)
+		 {
+         	para1-=yenideger;
+         	printf("Son miktar=> %d\n",para1);
+         }
+         else
+            printf("Bakiye yetersiz: Mevcut miktar %d\n",para1);/*hesaptaki miktarın yeterli olmadıgı durumda bunu belirtip ne kadar gönderebilicegini yazdırdık*/
+        	printf("Baska islem yapmak icin 1\n Cikmak icin 2\n"); /*kullanıcının işi bitmemişse takrar calıştırmasına gerek kalmadan devam etmesini sagladık*/
+        	scanf("%d",&x);
+        if(x==1)
+          printf("Devam: \n");
+        else
+           i++;
+         break;
+         
+         case 2:
+         	printf("Hesaptaki miktar=> %d\n",para2);
+         	printf("Cekilecek miktari girin: ");
+         	scanf("%d",&yenideger);
+         if(yenideger<=para2)
+		 {
+         para2-=yenideger;
+         printf("Son miktar=> %d\n",para2);
+         }
+         else
+            printf("Bakiye yetersiz: Mevcut miktar %d\n",para2);/*hesaptaki miktarın yeterli olmadıgı durumda bunu belirtip ne kadar gönderebilicegini yazdırdık*/
+        	printf("Baska islem yapmak icin 1\n Cikmak icin 2\n"); /*kullanıcının işi bitmemişse takrar calıştırmasına gerek kalmadan devam etmesini sagladık*/
+        	scanf("%d",&x);
+        if(x==1)
+          printf("Devam: \n");
+        else
+           i++;
+         break;
+         
+          }
+    	
+    	 }
+  }
+  while(i==0);
+  printf("Son miktar=> %d",para1);
+    return 0;
+}
