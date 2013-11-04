@@ -30,6 +30,20 @@ int main()
 getch();
 
 }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Nufus sayisi odevi:
 #include <stdio.h>
 #include <conio.h>
@@ -96,6 +110,26 @@ int main()
 
 }/*
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*mukemmel sayilar odevi:
 #include <stdio.h>
 #include <conio.h>
@@ -122,6 +156,27 @@ getch();
 return 0;
 }
 /*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*ikiz asal sayilar odevi:
 #include<stdio.h>
 int main()
