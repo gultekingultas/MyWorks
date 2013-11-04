@@ -1,0 +1,170 @@
+
+/* //Asal sayilari yazdirma odevi:
+#include <stdio.h>
+int main()
+{
+	int i,j,N,sayi,sayac=0;
+	printf("Lutfen sinirlayici bir sayi giriniz:");//hangi sayıya kadar olan asalları bulmamızı belirler
+	scanf("%d",&sayi);
+	for(i=2;i<=sayi;i++)
+	{
+		N=1;//kontrol yapısı
+	
+		for(j=2;j<i;j++)
+		{
+			if(i%j==0)//tam bolunuyorsa:
+			{
+			N=0;//kontrol yapısı asal degilse
+		
+			break;//döngüden cık
+			}
+		}
+		if(N==1)//kendinden baska tam boleni yoksa
+			{
+				sayac++;//sayacı bir arttır
+			printf("\n%d\n",i);
+		
+			}
+			
+	}
+	printf("\n%d kadar asal sayi vardir.",sayac);// sayac sayisi kadar asal sayi vardır
+getch();
+
+}*/
+/*Nufus sayisi odevi:
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+	
+    float a = 10000000;
+    float b = 40000000;
+	int yil=0;
+
+	/*for(;;)//sonsuz döngüye soktuk
+	{
+		if( a > b)  // a sehri b sehrinin nüfusundan fazla oldugunda döngü sona erecek
+			break; //
+	
+		else
+		{
+			a = a + (a/4);// a/4 demek (a*25)/100 demektir
+		    b = b + ((12*b)/(100));
+            yil++;                    // yil, a şehri şehrini geçene kadar artacak ve a şehri b şehrini kaç yıl sonra geçer bize söyliyecek
+		}
+	}
+
+	printf("%d yil sonrasinda iki sehirin nufuslarida esitlenmis olacak.", yil);*/
+
+	/*------------------*/
+	
+	/*while(1) // while ile yapilan sonsuz dongudur
+	{
+		if( a > b)
+			break;
+	
+		else
+		{
+			a = a + (a/4);
+		    b = b + ((12*b)/(100));
+            yil++;
+		}
+	}
+
+	printf("%d yil sonrasinda iki sehirin nufuslarida esitlenmis olacak.", yil);*/
+
+
+	/*--------------------*/
+
+	do
+	{
+	if( a > b)
+			break;
+	
+		else
+		{
+			a = a + (a/4);
+		    b = b + ((12*b)/(100));
+            yil++;
+		}
+	}
+	while(1);
+
+	printf("%d yil sonrasinda iki sehirin nufuslarida esitlenmis olacak.", yil);
+	
+
+
+
+}/*
+
+/*mukemmel sayilar odevi:
+#include <stdio.h>
+#include <conio.h>
+
+int main()
+{
+
+int toplam=0,j,i;
+
+for(i=1;i<1000;i++){//1000 e kadar olan sayılar kontrol edilecek.
+	toplam=0; // toplam her seferinde 0'lanmalı.Çünkü bir sayının tam bölenlerini topladığımızda diğer sayının tam bölenlerini üzerine eklemek istemeyiz.
+
+	for(j=1;j<=i/2;j++)
+	{
+		if(i%j==0) 
+			toplam+=j;// sayı j'ye bölünüyorsa tam bölünenleri toplamak için.
+	}
+
+	if(toplam==i)
+		printf("%d\n",toplam);//toplam kontrol edilen sayıya(i) esit ise yazdır.
+}
+
+getch();
+return 0;
+}
+/*
+/*ikiz asal sayilar odevi:
+#include<stdio.h>
+int main()
+{int max=0,max2=0,i,j,N,f;
+
+for(i=10;i<=97;i++)
+{ 
+N=1;
+  
+	for(j=2;j<i;j++)
+	{
+		if(i%j==0)
+	        N=0;
+		
+	}
+	   f=i+2; 
+	for(j=2;j<f;j++)
+		  {  
+			 
+		if(f%j==0) 
+			N=0;
+
+			}
+	if(N==1)
+		if(i>=max)
+		{	
+		max=f;
+	        max2=i;
+	}
+}
+         printf("iki basamakli max iki asal sayi======>%d ve %d 'dur\n",max2,max);
+		 return 0 ;
+}
+
+         /*
+	
+
+
+
+
+
+
+
+
+
